@@ -48,9 +48,4 @@ Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdcommenter'
 
-" git
-Plug 'tpope/vim-fugitive'
-
-Plug 'tpope/vim-repeat'
-
 call plug#end()
