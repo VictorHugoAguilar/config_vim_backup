@@ -12,12 +12,14 @@ Plug 'itchyny/lightline.vim'
 " Themes
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'dracula/vim', {'as':'dracula'}
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Tree
 Plug 'scrooloose/nerdtree'
 
 " typing
+Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 
@@ -26,9 +28,11 @@ Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 
 " autocomplete
-" Plug 'sirver/ultisnips'
-Plug 'SirVer/ultisnips'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sirver/ultisnips'
+
+" Track the engine.
+Plug 'honza/vim-snippets'
 
 " test
 Plug 'tyewang/vimux-jest-test'

@@ -18,7 +18,7 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head',
       \   'kitestatus': 'kite#statusline'
       \ },
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'dracula',
       \ 'subseparator': {
       \   'left': '',
       \   'right': ''
@@ -87,8 +87,6 @@ set diffopt+=vertical
 
 
 " Highlight symbol under cursor on CursorHold
-
-
 let $FZF_DEFAULT_OPTS='--layout=reverse'
 "let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 "function! FloatingFZF()
@@ -129,3 +127,4 @@ let $FZF_DEFAULT_OPTS='--layout=reverse'
     "" has been found.
     "return search_result
 "endfunction
+
