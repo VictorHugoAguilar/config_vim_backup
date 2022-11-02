@@ -1,9 +1,10 @@
-# config_vim_backup
+# config vim backup
 
 Backup Vim Configuration Support Themes Plugins
 
+## Plugins VIM
 
-Dependecies
+Dependecies pluggins
 
 - FZF
 ````Shell
@@ -16,7 +17,14 @@ Dependecies
 
 Themes
 
-OneDark
-Drácula
-Material (active)
+- Gruvbox
+- Drácula
+- Material (active)
+
+## ZSH
+
+Dependencies pluggins
+
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
