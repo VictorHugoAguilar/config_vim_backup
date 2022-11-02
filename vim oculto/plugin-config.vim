@@ -18,7 +18,7 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head',
       \   'kitestatus': 'kite#statusline'
       \ },
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'material_vim',
       \ 'subseparator': {
       \   'left': '',
       \   'right': ''
@@ -84,7 +84,8 @@ set signcolumn=yes
 " fugitive always vertical diffing
 set diffopt+=vertical
 
-
+" Config for fzf 
+set rtp+=/opt/homebrew/opt/fzf
 
 " Highlight symbol under cursor on CursorHold
 let $FZF_DEFAULT_OPTS='--layout=reverse'
@@ -127,4 +128,3 @@ let $FZF_DEFAULT_OPTS='--layout=reverse'
     "" has been found.
     "return search_result
 "endfunction
-
