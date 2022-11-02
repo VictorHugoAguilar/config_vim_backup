@@ -129,10 +129,6 @@ let $FZF_DEFAULT_OPTS='--layout=reverse'
     "return search_result
 "endfunction
 
-" These are the basic settings to get the font to work (required):
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
-set encoding=utf-8
-
 " required if using https://github.com/bling/vim-airline
 let g:airline_powerline_fonts=1 
 let g:airline#extensions#tabline#enabled = 1
