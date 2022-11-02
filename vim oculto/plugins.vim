@@ -12,11 +12,14 @@ Plug 'itchyny/lightline.vim'
 " Themes
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'norcalli/nvim-colorizer.lua'
-Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'norcalli/nvim-colorizer.lua'
+"Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'joshdick/onedark.vim'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " Tree
 Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 
 " typing
 Plug 'jiangmiao/auto-pairs'
