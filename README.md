@@ -15,7 +15,7 @@ Dependecies pluggins
   brew install the_silver_searcher
 ````
 
-- (NerdFont) [https://github.com/ryanoasis/nerd-fonts]
+- [NerdFont](https://github.com/ryanoasis/nerd-fonts)
 ````Shell
   brew tap homebrew/cask-fonts
   brew install --cask font-hack-nerd-font
