@@ -16,4 +16,7 @@ Dependecies
 
 Themes
 
+OneDark
 Drácula
+Material (active)
+
