@@ -1,9 +1,9 @@
 let mapleader=" "
 
 " testing
-nnoremap <Leader>t :TestNearest<CR>
-nnoremap <Leader>T :TestFile<CR>
-nnoremap <Leader>TT :TestSuite<CR>
+nnoremap <Leader>tn :TestNearest<CR>
+nnoremap <Leader>tf :TestFile<CR>
+nnoremap <Leader>ts :TestSuite<CR>
 
 " split resize
 nnoremap <Leader>> 10<C-w>>
@@ -23,7 +23,7 @@ cnoreabbrev diff Gdiff
 
 " plugs
 map <Leader>nt :NERDTreeFind<CR>
-map <Leader>p :Files<CR>
+map <Leader>pf :Files<CR>
 map <Leader>ag :Ag<CR>
 
 " tmux navigator
