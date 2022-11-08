@@ -1,5 +1,6 @@
 " HTML, JSX
-let g:closetag_filenames = '*.html,*.js,*.jsx,*.ts,*.tsx'
+let g:closetag_filenames = '*.html,*.js,*.jsx,*.ts,*.tsx,*.vue'
+
 " Lightlane
 let g:lightline = {
       \ 'active': {
@@ -41,26 +42,15 @@ let g:UltiSnipsListSnippets="<C-_>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
-" kite
-"let g:kite_supported_languages = ['*']
 let g:coc_global_extensions = [
       \ 'coc-tsserver'
       \ ]
+      
 " tmux navigator
 let g:tmux_navigator_no_mappings = 1
 
 " coc
 autocmd FileType scss setl iskeyword+=@-@
-
-" vim fugitive
-command! -bang -nargs=? -complete=dir GFiles
-  \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 " if hidden is not set, TextEdit might fail.
 set hidden
