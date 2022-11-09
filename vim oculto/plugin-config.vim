@@ -25,8 +25,11 @@ let g:lightline = {
       \   'right': ''
       \ }
       \}
- 
-" airline
+
+" required if using https://github.com/bling/vim-airline
+let g:airline_powerline_fonts=1 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_theme = 'material'
 
 "  nerdtree
@@ -121,8 +124,3 @@ let $FZF_DEFAULT_OPTS='--layout=reverse'
     "" has been found.
     "return search_result
 "endfunction
-
-" required if using https://github.com/bling/vim-airline
-let g:airline_powerline_fonts=1 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'default'
