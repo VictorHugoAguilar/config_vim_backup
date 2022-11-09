@@ -25,6 +25,9 @@ let g:lightline = {
       \   'right': ''
       \ }
       \}
+ 
+" airline
+let g:airline_theme = 'material'
 
 "  nerdtree
 let NERDTreeShowHidden=1
