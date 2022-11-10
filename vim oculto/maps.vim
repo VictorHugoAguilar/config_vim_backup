@@ -48,7 +48,7 @@ map <Leader>q :tabprevious<cr>
 map <Leader>w :tabnext<cr>
 
 " buffers
-map <Leader>ob :Buffers<cr>
+map <Leader>bf :Buffers<cr>
 
 " keeping it centered
 nnoremap n nzzzv
@@ -64,7 +64,10 @@ nnoremap <Leader>j :m .+1<CR>==
 " faster scrolling
 nnoremap <C-j> 10<C-e>
 nnoremap <C-k> 10<C-y>
-nmap <Leader>s <Plug>(easymotion-s2)
+
+" Gif config 2-character search motion easymotion
+nmap <Leader>fs <Plug>(easymotion-s2)
+nmap <Leader>ft <Plug>(easymotion-t2)
 
 " git
 nnoremap <Leader>G :G<cr>
