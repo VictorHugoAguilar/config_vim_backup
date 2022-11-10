@@ -1,246 +1,126 @@
-let mapleader=" "
+" HTML, JSX
+let g:closetag_filenames = '*.html,*.js,*.jsx,*.ts,*.tsx,*.vue'
 
-" testing
-nnoremap <Leader>tn :TestNearest<CR>
-nnoremap <Leader>tf :TestFile<CR>
-nnoremap <Leader>ts :TestSuite<CR>
+" Lightlane
+let g:lightline = {
+      \ 'active': {
+      \   'left': [['mode', 'paste'], [], ['relativepath', 'modified']],
+      \   'right': [['kitestatus'], ['filetype', 'percent', 'lineinfo'], ['gitbranch']]
+      \ },
+      \ 'inactive': {
+      \   'left': [['inactive'], ['relativepath']],
+      \   'right': [['bufnum']]
+      \ },
+      \ 'component': {
+      \   'bufnum': '%n',
+      \   'inactive': 'inactive'
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'kitestatus': 'kite#statusline'
+      \ },
+      \ 'colorscheme': 'material_vim',
+      \ 'subseparator': {
+      \   'left': '',
+      \   'right': ''
+      \ }
+      \}
 
-" split resize
-nnoremap <Leader>> 10<C-w>>
-nnoremap <Leader>< 10<C-w><
+" required if using https://github.com/bling/vim-airline
+let g:airline_powerline_fonts=1 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_theme = 'material'
 
-" quick semi
-nnoremap <Leader>; $a;<Esc>
+"  nerdtree
+let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=1
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let NERDTreeShowLineNumbers=1
+let NERDTreeMapOpenInTab='\t'
 
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>Q :q!<CR>
-" shorter commands
-cnoreabbrev tree NERDTreeToggle
-cnoreabbrev blame Gblame
-cnoreabbrev find NERDTreeFind
-cnoreabbrev diff Gdiff
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<C-_>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
-" plugs
-map <Leader>nt :NERDTreeFind<CR>
-map <Leader>nf :Files<CR>
-map <Leader>ag :Ag<CR>
-
+let g:coc_global_extensions = [
+      \ 'coc-tsserver'
+      \ ]
+      
 " tmux navigator
-nnoremap <silent> <Leader><C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <Leader><C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <Leader><C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <Leader><C-l> :TmuxNavigateRight<cr>
+let g:tmux_navigator_no_mappings = 1
 
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" coc
+autocmd FileType scss setl iskeyword+=@-@
 
-" Remap surround to lowercase s so it does not add an empty space
-xmap s <Plug>VSurround
-" diagnostics
-nnoremap <leader>P :let @*=expand("%")<CR>
+" if hidden is not set, TextEdit might fail.
+set hidden
 
-" tabs navigation
-map <Leader>q :tabprevious<cr>
-map <Leader>w :tabnext<cr>
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
 
-" buffers
-map <Leader>bf :Buffers<cr>
+" Better display for messages
+set cmdheight=1
 
-" keeping it centered
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ`z
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
 
-" Moving text
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-nnoremap <Leader>k :m .-2<CR>==
-nnoremap <Leader>j :m .+1<CR>==
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
 
-" faster scrolling
-nnoremap <C-j> 10<C-e>
-nnoremap <C-k> 10<C-y>
+" always show signcolumns
+set signcolumn=yes
 
-" Gif config 2-character search motion easymotion
-nmap <Leader>fs <Plug>(easymotion-s2)
-nmap <Leader>ft <Plug>(easymotion-t2)
+" fugitive always vertical diffing
+set diffopt+=vertical
 
-" git
-nnoremap <Leader>G :G<cr>
-nnoremap <Leader>gp :Gpush<cr>
-nnoremap <Leader>gl :Gpull<cr>
+" Config for fzf 
+set rtp+=/opt/homebrew/opt/fzf
 
-" run current file
-nnoremap <Leader>x :!node %<cr>
+" Highlight symbol under cursor on CursorHold
+let $FZF_DEFAULT_OPTS='--layout=reverse'
+"let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+"function! FloatingFZF()
+  "let buf = nvim_create_buf(v:false, v:true)
+  "call setbufvar(buf, '&signcolumn', 'no')
+  "let height = float2nr((&lines - 3) / 2)
+  "let width = float2nr(&columns - (&columns * 2 / 10))
+  "let col = float2nr((&columns - width) / 2)
+  "let row = float2nr((&lines - height) / 2)
+  "let opts = {
+        "\ 'relative': 'editor',
+        "\ 'row': row,
+        "\ 'col': col,
+        "\ 'width': width,
+        "\ 'height': height
+        "\ }
+  "call nvim_open_win(buf, v:true, opts)
+"endfunction
 
-" Use <c-space> to trigger completion.
-if &filetype == "javascript" 
-  inoremap <c-space> <C-x><C-u>
-else
-  inoremap <silent><expr> <c-space> coc#refresh()
-endif
+"function! SearchPatternInFile(pattern)
+    "" Save cursor position.
+    "let save_cursor = getcurpos()
 
+    "" Set cursor position to beginning of file.
+    "call cursor(0, 0)
 
-set splitright
-function! OpenTerminal()
-  " move to right most buffer
-  execute "normal \<C-l>"
-  execute "normal \<C-l>"
-  execute "normal \<C-l>"
-  execute "normal \<C-l>"
+    "" Search for the string 'hello' with a flag c.  The c flag means that a
+    "" match at the cursor position will be accepted.
+    "let search_result = search(a:pattern, "c")
 
-  let bufNum = bufnr("%")
-  let bufType = getbufvar(bufNum, "&buftype", "not found")
+    "" Set the cursor back at the saved position.  The setpos function was
+    "" used here because the return value of getcurpos can be used directly
+    "" with it, unlike the cursor function.
+    "call setpos('.', save_cursor)
 
-  if bufType == "terminal"
-    " close existing terminal
-    execute "q"
-  else
-    " open terminal
-    execute "vsp term://zsh"
-
-    " turn off numbers
-    execute "set nonu"
-    execute "set nornu"
-
-    " toggle insert on enter/exit
-    silent au BufLeave <buffer> stopinsert!
-    silent au BufWinEnter,WinEnter <buffer> startinsert!
-
-    " set maps inside terminal buffer
-    execute "tnoremap <buffer> <C-h> <C-\\><C-n><C-w><C-h>"
-    execute "tnoremap <buffer> <C-t> <C-\\><C-n>:q<CR>"
-    execute "tnoremap <buffer> <C-\\><C-\\> <C-\\><C-n>"
-
-    startinsert!
-  endif
-endfunction
-nnoremap <C-t> :call OpenTerminal()<CR>
-
-inoremap <expr> <CR> ParensIndent()
-
-function! ParensIndent()
-  let prev = col('.') - 1
-  let after = col('.')
-  let prevChar = matchstr(getline('.'), '\%' . prev . 'c.')
-  let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
-  if (prevChar == '"' && afterChar == '"') ||
-\    (prevChar == "'" && afterChar == "'") ||
-\    (prevChar == "(" && afterChar == ")") ||
-\    (prevChar == "{" && afterChar == "}") ||
-\    (prevChar == "[" && afterChar == "]")
-    return "\<CR>\<ESC>O"
-  endif
-  
-  return "\<CR>"
-endfunction
-
-inoremap <expr> <space> ParensSpacing()
-
-function! ParensSpacing()
-  let prev = col('.') - 1
-  let after = col('.')
-  let prevChar = matchstr(getline('.'), '\%' . prev . 'c.')
-  let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
-  if (prevChar == '"' && afterChar == '"') ||
-\    (prevChar == "'" && afterChar == "'") ||
-\    (prevChar == "(" && afterChar == ")") ||
-\    (prevChar == "{" && afterChar == "}") ||
-\    (prevChar == "[" && afterChar == "]")
-    return "\<space>\<space>\<left>"
-  endif
-  
-  return "\<space>"
-endfunction
-
-inoremap <expr> <BS> ParensRemoveSpacing()
-
-function! ParensRemoveSpacing()
-  let prev = col('.') - 1
-  let after = col('.')
-  let prevChar = matchstr(getline('.'), '\%' . prev . 'c.')
-  let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
-
-  if (prevChar == '"' && afterChar == '"') ||
-\    (prevChar == "'" && afterChar == "'") ||
-\    (prevChar == "(" && afterChar == ")") ||
-\    (prevChar == "{" && afterChar == "}") ||
-\    (prevChar == "[" && afterChar == "]")
-    return "\<bs>\<right>\<bs>"
-  endif
-  
-  if (prevChar == ' ' && afterChar == ' ')
-    let prev = col('.') - 2
-    let after = col('.') + 1
-    let prevChar = matchstr(getline('.'), '\%' . prev . 'c.')
-    let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
-    if (prevChar == '"' && afterChar == '"') ||
-  \    (prevChar == "'" && afterChar == "'") ||
-  \    (prevChar == "(" && afterChar == ")") ||
-  \    (prevChar == "{" && afterChar == "}") ||
-  \    (prevChar == "[" && afterChar == "]")
-      return "\<bs>\<right>\<bs>"
-    endif
-  endif
-  
-  return "\<bs>"
-endfunction
-
-inoremap { {}<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap ' ''<left>
-inoremap " ""<left>
-
-let curly = "}"
-inoremap <expr> } CheckNextParens(curly)
-
-let bracket = "]"
-inoremap <expr> ] CheckNextParens(bracket)
-
-let parens = ")"
-inoremap <expr> ) CheckNextParens(parens)
-
-let quote = "'"
-inoremap <expr> ' CheckNextQuote(quote)
-
-let dquote = '"'
-inoremap <expr> " CheckNextQuote(dquote)
-
-let bticks = '`'
-inoremap <expr> ` CheckNextQuote(bticks)
-
-function CheckNextQuote(c)
-  let after = col('.')
-  let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
-  
-  if (afterChar == a:c)
-    return "\<right>"
-  endif
-  if (afterChar == ' ' || afterChar == '' || afterChar == ')' || afterChar== '}' || afterChar == ']')
-    return a:c . a:c . "\<left>"
-  endif
-  if (afterChar != a:c)
-    let bticks = '`'
-    let dquote = '"'
-    let quote = "'"
-    if(afterChar == dquote || afterChar == quote || afterChar == bticks)
-      return a:c . a:c . "\<left>"
-    endif
-  endif
-  return a:c
-endfunction
-
-function CheckNextParens(c)
-  let after = col('.')
-  let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
-  if (afterChar == a:c)
-
-    return "\<right>"
-  endif
-  return a:c
-endfunction
+    "" If the search function didn't find the pattern, it will have
+    "" returned 0, thus it wasn't found.  Any other number means that an instance
+    "" has been found.
+    "return search_result
+"endfunction
