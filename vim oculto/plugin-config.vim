@@ -36,8 +36,8 @@ let g:airline_theme = 'material'
 let g:indentLine_enabled = 1
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " leading space
-" let g:indentLine_leadingSpaceChar='·'
-" let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar='·'
+let g:indentLine_leadingSpaceEnabled = 1
 
 "  nerdtree
 let NERDTreeShowHidden=1
