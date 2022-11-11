@@ -32,6 +32,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_theme = 'material'
 
+" custom identline
+let g:indentLine_enabled = 1
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" leading space
+" let g:indentLine_leadingSpaceChar='·'
+" let g:indentLine_leadingSpaceEnabled = 1
+
 "  nerdtree
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
