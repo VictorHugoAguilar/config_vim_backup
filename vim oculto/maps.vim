@@ -15,6 +15,7 @@ nnoremap <Leader>; $a;<Esc>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :q!<CR>
+
 " shorter commands
 cnoreabbrev tree NERDTreeToggle
 cnoreabbrev blame Gblame
@@ -25,6 +26,9 @@ cnoreabbrev diff Gdiff
 map <Leader>nt :NERDTreeFind<CR>
 map <Leader>nf :Files<CR>
 map <Leader>ag :Ag<CR>
+
+"Autoformat
+nnoremap <Leader>cf gg<CR>=G <CR> :retab <CR> :RemoveTrailingSpaces <CR>
 
 " tmux navigator
 nnoremap <silent> <Leader><C-h> :TmuxNavigateLeft<cr>
@@ -48,7 +52,7 @@ map <Leader>q :tabprevious<cr>
 map <Leader>w :tabnext<cr>
 
 " buffers
-map <Leader>bf :Buffers<cr>
+map <Leader>ob :Buffers<cr>
 
 " keeping it centered
 nnoremap n nzzzv
