@@ -4,10 +4,15 @@ set ruler
 set cursorline
 set encoding=utf-8
 set showmatch
+" indent
+"filetype plugin indent on
 set sw=2
+set ts=2
+
 set relativenumber
 set laststatus=2
 set noshowmode
+set termguicolors
 syntax on
 syntax enable
 
@@ -23,16 +28,6 @@ so ~/.vim/coc-config.vim
 "colorscheme dracula
 
 colorscheme material
-
-" For Neovim
-if (has('nvim'))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-endif
-
-" For Neovim
-if (has('termguicolors'))
-  set termguicolors
-endif
 
 highlight Normal ctermbg=NONE
 au BufNewFile,BufRead *.html set filetype=html
