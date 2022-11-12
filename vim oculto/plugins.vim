@@ -9,9 +9,9 @@ Plug 'maximbaz/lightline-ale'
 Plug 'itchyny/lightline.vim'
 
 " Themes
-" Plug 'morhetz/gruvbox'
-" Plug 'shinchu/lightline-gruvbox.vim'
-" Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
+Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " Tree
@@ -26,6 +26,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
+
+" Autoformat
+Plug 'vim-autoformat/vim-autoformat'
 
 " tmux
 Plug 'benmills/vimux'
