@@ -52,7 +52,7 @@ map <Leader>q :tabprevious<cr>
 map <Leader>w :tabnext<cr>
 
 " buffers
-map <Leader>ob :Buffers<cr>
+map <Leader>bf :Buffers<cr>
 
 " keeping it centered
 nnoremap n nzzzv
