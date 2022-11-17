@@ -102,6 +102,7 @@ source /usr/local/share/zsh-syntax-highlighlighting/zsh-syntax-highlighting.zsh
 #   export EDITOR='mvim'
 # fi
 
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
