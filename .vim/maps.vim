@@ -31,10 +31,15 @@ map <Leader>ag :Ag<CR>
 nnoremap <Leader>cf gg<CR>=G <CR> :retab <CR> :RemoveTrailingSpaces <CR>
 
 " tmux navigator
-nnoremap <silent> <Leader><C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <Leader><C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <Leader><C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <Leader><C-l> :TmuxNavigateRight<cr>
+"nnoremap <silent> <Leader><C-h> :TmuxNavigateLeft<cr>
+"nnoremap <silent> <Leader><C-j> :TmuxNavigateDown<cr>
+"nnoremap <silent> <Leader><C-k> :TmuxNavigateUp<cr>
+"nnoremap <silent> <Leader><C-l> :TmuxNavigateRight<cr>
+"
+nnoremap <silent> <C-p><Up>    :TmuxNavigateUp <CR>
+nnoremap <silent> <C-p><Down>  :TmuxNavigateDown<cr>
+nnoremap <silent> <C-p><Left>  :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-p><Right> :TmuxNavigateRight<cr>
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
