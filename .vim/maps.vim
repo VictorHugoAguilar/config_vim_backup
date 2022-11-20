@@ -41,6 +41,13 @@ nnoremap <silent> <C-p><Down>  :TmuxNavigateDown<cr>
 nnoremap <silent> <C-p><Left>  :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-p><Right> :TmuxNavigateRight<cr>
 
+" debug
+" mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
+
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
