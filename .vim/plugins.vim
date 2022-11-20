@@ -55,4 +55,7 @@ Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdcommenter'
 
+" debug
+Plug 'puremourning/vimspector'
+
 call plug#end()
