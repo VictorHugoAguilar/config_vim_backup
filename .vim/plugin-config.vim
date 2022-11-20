@@ -39,6 +39,9 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "let g:indentLine_leadingSpaceEnabled = 1
 "let g:indentLine_leadingSpaceChar='·'
 
+" debug
+let g:vimspector_enable_mappings = 'HUMAN'
+
 "Autoformat
 let g:autoformat_autoindent = 1 
 let g:autoformat_retab = 1
