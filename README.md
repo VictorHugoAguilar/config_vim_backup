@@ -21,6 +21,16 @@ Dependecies pluggins
   brew install --cask font-hack-nerd-font
 ````
 
+# COC
+
+Coc install plug for autocomplete and explorer
+
+```Shell
+:CocInstall coc-explorer
+
+:CocInstall coc-tsserver coc-vetur(vue)
+```
+
 Themes
 
 - Gruvbox
