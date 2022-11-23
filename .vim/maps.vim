@@ -30,29 +30,10 @@ map <Leader>ag :Ag<CR>
 "Autoformat
 nnoremap <Leader>cf gg<CR>=G <CR> :retab <CR> :RemoveTrailingSpaces <CR>
 
-" tmux navigator
-"nnoremap <silent> <Leader><C-h> :TmuxNavigateLeft<cr>
-"nnoremap <silent> <Leader><C-j> :TmuxNavigateDown<cr>
-"nnoremap <silent> <Leader><C-k> :TmuxNavigateUp<cr>
-"nnoremap <silent> <Leader><C-l> :TmuxNavigateRight<cr>
-"
 nnoremap <silent> <C-p><Up>    :TmuxNavigateUp <CR>
 nnoremap <silent> <C-p><Down>  :TmuxNavigateDown<cr>
 nnoremap <silent> <C-p><Left>  :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-p><Right> :TmuxNavigateRight<cr>
-
-" debug
-" mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
-" for normal mode - the word under the cursor
-nmap <Leader>di <Plug>VimspectorBalloonEval
-" for visual mode, the visually selected text
-xmap <Leader>di <Plug>VimspectorBalloonEval
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 
 " Remap surround to lowercase s so it does not add an empty space
 xmap s <Plug>VSurround
@@ -99,7 +80,6 @@ if &filetype == "javascript"
 else
   inoremap <silent><expr> <c-space> coc#refresh()
 endif
-
 
 set splitright
 function! OpenTerminal()
