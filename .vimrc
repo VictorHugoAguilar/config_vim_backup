@@ -18,13 +18,12 @@ syntax enable
 
 so ~/.vim/plugins.vim
 so ~/.vim/plugin-config.vim
-so ~/.vim/coc-config.vim
 so ~/.vim/maps.vim
+so ~/.vim/coc-config.vim
 
-"colorscheme gruvbox
-"let g:gruvbox_contrast_dark = "hard"
-
-colorscheme material
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "hard"
+"colorscheme material
 
 highlight Normal ctermbg=NONE
 au BufNewFile,BufRead *.html set filetype=html
