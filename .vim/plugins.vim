@@ -9,9 +9,9 @@ Plug 'maximbaz/lightline-ale'
 Plug 'itchyny/lightline.vim'
 
 " Themes
-" Plug 'morhetz/gruvbox'
-" Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'morhetz/gruvbox'
+Plug 'shinchu/lightline-gruvbox.vim'
+"Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " Tree
 Plug 'scrooloose/nerdtree'
