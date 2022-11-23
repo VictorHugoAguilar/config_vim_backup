@@ -18,14 +18,11 @@ syntax enable
 
 so ~/.vim/plugins.vim
 so ~/.vim/plugin-config.vim
-so ~/.vim/maps.vim
 so ~/.vim/coc-config.vim
+so ~/.vim/maps.vim
 
 "colorscheme gruvbox
 "let g:gruvbox_contrast_dark = "hard"
-
-"packadd! dracula
-"colorscheme dracula
 
 colorscheme material
 
