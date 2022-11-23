@@ -1,4 +1,3 @@
-" May need for vim (not neovim) since coc.nvim calculate byte offset by count
 " utf-8 byte sequence.
 set encoding=utf-8
 " Some servers have issues with backup files, see #649.
@@ -13,18 +12,12 @@ set updatetime=300
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
-" coc
-autocmd FileType scss setl iskeyword+=@-@
-
-let g:coc_global_extensions = [
-      \ 'coc-tsserver'
-      \ ]
-
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
+
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
@@ -35,76 +28,41 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:loaded_netrw  = 1
-let g:loaded_netrwPlugin = 1
-let g:loaded_netrwSettings = 1
-let g:loaded_netrwFileHandlers = 1
-let g:loaded_matchit = 1
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
-let g:coc_explorer_global_presets = {
-\   '.vim': {
-\     'root-uri': '~/.vim',
-\   },
-\   'cocConfig': {
-\      'root-uri': '~/.config/coc',
-\   },
-\   'tab': {
-\     'position': 'tab',
-\     'quit-on-open': v:true,
-\   },
-\   'tab:$': {
-\     'position': 'tab:$',
-\     'quit-on-open': v:true,
-\   },
-\   'floating': {
-\     'position': 'floating',
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'floatingTop': {
-\     'position': 'floating',
-\     'floating-position': 'center-top',
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'floatingLeftside': {
-\     'position': 'floating',
-\     'floating-position': 'left-center',
-\     'floating-width': 50,
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'floatingRightside': {
-\     'position': 'floating',
-\     'floating-position': 'right-center',
-\     'floating-width': 50,
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'simplify': {
-\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-\   },
-\   'buffer': {
-\     'sources': [{'name': 'buffer', 'expand': v:true}]
-\   },
-\ }
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" coc
+autocmd FileType scss setl iskeyword+=@-@
+
+let g:coc_global_extensions = [
+      \ 'coc-tsserver'
+      \ ]
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" Use preset argument to open it
-nmap <space>ed <Cmd>CocCommand explorer --preset .vim<CR>
-nmap <space>ef <Cmd>CocCommand explorer --preset floating<CR>
-nmap <space>ec <Cmd>CocCommand explorer --preset cocConfig<CR>
-nmap <space>eb <Cmd>CocCommand explorer --preset buffer<CR>
-
-" List all presets
-nmap <space>el <Cmd>CocList explPresets<CR>
-
-:nmap <space>e <Cmd>CocCommand explorer<CR>
-
-nmap <Leader>er <Cmd>call CocAction('runCommand', 'explorer.doAction', 'closest', ['reveal:0'], [['relative', 0, 'file']])<CR>
