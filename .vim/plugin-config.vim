@@ -39,9 +39,6 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "let g:indentLine_leadingSpaceEnabled = 1
 "let g:indentLine_leadingSpaceChar='·'
 
-" debug
-let g:vimspector_enable_mappings = 'HUMAN'
-
 "Autoformat
 let g:autoformat_autoindent = 1 
 let g:autoformat_retab = 1
@@ -63,15 +60,8 @@ let g:UltiSnipsListSnippets="<C-_>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
-let g:coc_global_extensions = [
-      \ 'coc-tsserver'
-      \ ]
-      
 " tmux navigator
 let g:tmux_navigator_no_mappings = 1
-
-" coc
-autocmd FileType scss setl iskeyword+=@-@
 
 " if hidden is not set, TextEdit might fail.
 set hidden
