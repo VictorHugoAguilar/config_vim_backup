@@ -13,6 +13,13 @@ set updatetime=300
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
+" coc
+autocmd FileType scss setl iskeyword+=@-@
+
+let g:coc_global_extensions = [
+      \ 'coc-tsserver'
+      \ ]
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file.
@@ -82,6 +89,12 @@ let g:coc_explorer_global_presets = {
 \     'sources': [{'name': 'buffer', 'expand': v:true}]
 \   },
 \ }
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Use preset argument to open it
 nmap <space>ed <Cmd>CocCommand explorer --preset .vim<CR>
