@@ -11,7 +11,6 @@ Plug 'itchyny/lightline.vim'
 " Themes
 " Plug 'morhetz/gruvbox'
 " Plug 'shinchu/lightline-gruvbox.vim'
-" Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " Tree
@@ -54,8 +53,5 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdcommenter'
-
-" debug
-Plug 'puremourning/vimspector'
 
 call plug#end()
