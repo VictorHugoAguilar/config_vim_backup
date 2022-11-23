@@ -33,6 +33,12 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+let g:loaded_netrw  = 1
+let g:loaded_netrwPlugin = 1
+let g:loaded_netrwSettings = 1
+let g:loaded_netrwFileHandlers = 1
+let g:loaded_matchit = 1
+
 let g:coc_explorer_global_presets = {
 \   '.vim': {
 \     'root-uri': '~/.vim',
