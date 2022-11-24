@@ -53,5 +53,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdcommenter'
+Plug 'frazrepo/vim-rainbow'
 
 call plug#end()
