@@ -126,3 +126,7 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
+
+# Buscar carpetas node_modules
+alias buscarmodulos="find . -name "node_modules" -type d -prune | xargs du -chs"
+alias borrarmodulos="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;"
