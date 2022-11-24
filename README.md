@@ -23,12 +23,16 @@ Dependecies pluggins
 
 ## COC
 
-Coc install plug for autocomplete and explorer
+Coc install plug for autocomplete  
+
+```Shell
+:CocInstall coc-tsserver coc-vetur(vue)
+```
+
+## [COC-EXPLORER](https://github.com/weirongxu/coc-explorer) 
 
 ```Shell
 :CocInstall coc-explorer
-
-:CocInstall coc-tsserver coc-vetur(vue)
 ```
 
 ## Themes
